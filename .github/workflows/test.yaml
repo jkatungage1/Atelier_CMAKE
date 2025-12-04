@@ -104,3 +104,13 @@ jobs:
           cmake ..
           make
           ./src/calculator pow 5 2
+  
+  Deployment:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Compilation
+      run: |
+        last_directory=$(basename ${{ runner.workspace }})
+        git clone https://github.com/${{ github.repository }}.git
+        cd ./$last_directory
+        echo "Déploiement de la solution..."
