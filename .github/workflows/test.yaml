@@ -50,7 +50,7 @@ jobs:
           set -e
           echo "== Test add 10 5 ==" > report.txt
           ./src/calculator add 10 5 | tee -a report.txt
-          echo "Exit code: $?" >> report.txt
+          echo "\nExit code: $?" >> report.txt
 
       - name: Upload report as artifact
         uses: actions/upload-artifact@v4
@@ -161,7 +161,7 @@ jobs:
           set -e
           echo "== Test pow 5 2 ==" > pow_report.txt
           ./src/calculator pow 5 2 | tee -a pow_report.txt
-          echo "Exit code: $?" >> pow_report.txt
+          echo "\nExit code: $?" >> pow_report.txt
 
       - name: Upload report as artifact
         uses: actions/upload-artifact@v4
