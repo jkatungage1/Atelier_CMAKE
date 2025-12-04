@@ -28,13 +28,13 @@ jobs:
           cd build
           cmake ..
           make
-          ./src/calculator add 10 5
+          ./src/calculator add 5 5
 
   Test_sub:
     runs-on: ubuntu-latest
     needs: Compilation
     steps:
-      - name: Test fonction add
+      - name: Test fonction sub
         run: |
           last_directory=$(basename ${{ runner.workspace }})
           git clone https://github.com/${{ github.repository }}.git
@@ -43,13 +43,13 @@ jobs:
           cd build
           cmake ..
           make
-          ./src/calculator sub 10 5
+          ./src/calculator sub 5 5
 
   Test_mul:
     runs-on: ubuntu-latest
     needs: Compilation
     steps:
-      - name: Test fonction add
+      - name: Test fonction mul
         run: |
           last_directory=$(basename ${{ runner.workspace }})
           git clone https://github.com/${{ github.repository }}.git
@@ -58,13 +58,13 @@ jobs:
           cd build
           cmake ..
           make
-          ./src/calculator mul 10 5
+          ./src/calculator mul 2 5
 
   Test_div:
     runs-on: ubuntu-latest
     needs: Compilation
     steps:
-      - name: Test fonction add
+      - name: Test fonction div
         run: |
           last_directory=$(basename ${{ runner.workspace }})
           git clone https://github.com/${{ github.repository }}.git
@@ -73,13 +73,13 @@ jobs:
           cd build
           cmake ..
           make
-          ./src/calculator div 10 5
+          ./src/calculator div 1 5
   
   Test_mod:
     runs-on: ubuntu-latest
     needs: Compilation
     steps:
-      - name: Test fonction add
+      - name: Test fonction mod
         run: |
           last_directory=$(basename ${{ runner.workspace }})
           git clone https://github.com/${{ github.repository }}.git
@@ -88,13 +88,13 @@ jobs:
           cd build
           cmake ..
           make
-          ./src/calculator mod 10 2
+          ./src/calculator mod 5 2
     
   Test_pow:
     runs-on: ubuntu-latest
     needs: Compilation
     steps:
-      - name: Test fonction add
+      - name: Test fonction pow
         run: |
           last_directory=$(basename ${{ runner.workspace }})
           git clone https://github.com/${{ github.repository }}.git
